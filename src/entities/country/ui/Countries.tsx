@@ -17,7 +17,7 @@ export default function Countries() {
     (state: RootState) => state.countries
   );
   const { selectedCountry } = useSelector((state: RootState) => state.search);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     if (countries) {
@@ -36,22 +36,21 @@ export default function Countries() {
   return (
     <>
       <ul className={classes["countries-grid"]}>
-        {!isLoading && !error && filteredCountries?.length > 0
-          ? filteredCountries.slice(0, visibleCount).map((country: Country) => (
-              <li key={country.cca3}>
-                <Link to={`/country/${country.cca3}`}>
-                  <img
-                    src={country.flags.svg}
-                    alt={`${getCountryName(
-                      country,
-                      i18n.language
-                    )}'s flag image`}
-                  />
-                  <CountryName name={getCountryName(country, i18n.language)} />
-                </Link>
-              </li>
-            ))
-          : !isLoading && !error && <p>No countries found</p>}
+        {!isLoading && !error && filteredCountries?.length > 0 ? (
+          filteredCountries.slice(0, visibleCount).map((country: Country) => (
+            <li key={country.cca3}>
+              <Link to={`/country/${country.cca3}`}>
+                <img
+                  src={country.flags.svg}
+                  alt={`${getCountryName(country, i18n.language)}'s flag image`}
+                />
+                <CountryName name={getCountryName(country, i18n.language)} />
+              </Link>
+            </li>
+          ))
+        ) : (
+          <p>{t("nocountries")}</p>
+        )}
       </ul>
 
       {!isLoading && !error && filteredCountries.length > visibleCount && (
@@ -59,15 +58,12 @@ export default function Countries() {
           onClick={() => dispatch(loadMore())}
           className={classes["load-more"]}
         >
-          Load More
+          {t("loadmore")}
         </button>
       )}
 
-      {!isLoading && !error && sortedCountries.length === 0 && (
-        <p>No countries found for this region</p>
-      )}
-      {isLoading && <p>Loading...</p>}
-      {error && <p>Error fetching data</p>}
+      {isLoading && <p>{t("loading")}</p>}
+      {error && <p>{t("error")}</p>}
     </>
   );
 }

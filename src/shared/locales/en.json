@@ -5,7 +5,6 @@
   "sort_population": "Sort by population",
   "borders": "Borders",
   "population": "Population",
-  "million": "million",
   "km": "km",
   "capital": "Capital",
   "area": "Area",
@@ -15,5 +14,11 @@
   "africa": "Africa",
   "americas": "North and South America",
   "oceania": "Oceania",
-  "antarctica": "Antarctica"
+  "antarctica": "Antarctica",
+  "loadmore": "Load More",
+  "loading": "Loading...",
+  "nocountries": "No countries found",
+  "error": "Error fetching data",
+  "search": "Search",
+  "placeholder_search": "Search..."
 }

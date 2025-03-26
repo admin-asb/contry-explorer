@@ -9,6 +9,8 @@ import {
   setSuggestions,
 } from "../../model/searchSlice";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { getCountryName } from "../../helpers/countryName";
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -16,16 +18,15 @@ export default function SearchBar() {
   const { inputCountry, suggestions } = useSelector(
     (state: RootState) => state.search
   );
-  const { data: countries } = useGetCountryByNameQuery(inputCountry, {
-    skip: inputCountry.length < 2,
-  });
+  const { data: countries } = useGetCountryByNameQuery(inputCountry);
+  const { t, i18n } = useTranslation();
 
   const computedSuggestions = useMemo(() => {
     if (countries) {
-      return countries.map((country) => country.name.official);
+      return countries.map((country) => getCountryName(country, i18n.language));
     }
     return [];
-  }, [countries]);
+  }, [countries, i18n.language]);
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     dispatch(setInputCountry(e.target.value));
@@ -52,7 +53,7 @@ export default function SearchBar() {
         <input
           type="text"
           className={classes.search}
-          placeholder="Search..."
+          placeholder={t("placeholder_search")}
           value={inputCountry}
           onChange={handleInputChange}
           onKeyDown={(e) => e.key === "Enter" && handleSearch()}
@@ -69,7 +70,7 @@ export default function SearchBar() {
           </ul>
         )}
       </div>
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch}>{t("search")}</button>
     </div>
   );
 }

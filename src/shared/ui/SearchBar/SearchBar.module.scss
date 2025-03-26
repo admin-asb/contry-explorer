@@ -48,12 +48,20 @@
 }
 
 @media (max-width: 410px) {
-  .search-container .input-wrapper .search {
-    padding: 0.7rem;
-    padding-left: 1rem;
-  }
+  .search-container {
+    .input-wrapper {
+      .search {
+        padding: 0.7rem;
+        padding-left: 1rem;
+      }
 
-  .search-container button {
-    padding: 0.5rem;
+      .suggestions {
+        padding-left: 0.5rem;
+      }
+    }
+
+    button {
+      padding: 0.5rem;
+    }
   }
 }
