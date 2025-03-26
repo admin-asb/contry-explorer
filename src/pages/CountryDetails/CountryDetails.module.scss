@@ -1,0 +1,33 @@
+.card-page {
+  padding-top: 84px;
+  h1 {
+    margin-bottom: 2rem;
+  }
+  img {
+    width: 30%;
+    border-radius: 10px;
+  }
+  ul {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .card-page img {
+    width: 60%;
+  }
+}

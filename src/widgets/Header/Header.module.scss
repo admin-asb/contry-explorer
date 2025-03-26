@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  position: fixed;
+  width: 100%;
+  max-width: 75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: silver;
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    flex: 1;
+    cursor: pointer;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+@media (max-width: 410px) {
+  .header {
+    padding: 1rem;
+    .logo {
+      font-size: 1rem;
+    }
+  }
+}

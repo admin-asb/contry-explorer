@@ -1,0 +1,26 @@
+.headline {
+  font-size: 3rem;
+  padding-top: 84px;
+}
+
+.widgets {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sort-btn {
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+@media (max-width: 410px) {
+  .widgets {
+    flex-direction: column;
+  }
+}

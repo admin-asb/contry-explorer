@@ -1,0 +1,19 @@
+{
+  "home": "Главная",
+  "search_placeholder": "Поиск страны...",
+  "filter_region": "Фильтр по региону",
+  "sort_population": "Сортировка по населению",
+  "borders": "Соседние страны",
+  "population": "Население",
+  "million": "миллион",
+  "km": "км",
+  "capital": "Столица",
+  "area": "Площадь",
+  "languages": "Языки",
+  "asia": "Азия",
+  "europe": "Европа",
+  "africa": "Африка",
+  "americas": "Северная и Южная Америка",
+  "oceania": "Океания",
+  "antarctica": "Антарктида"
+}

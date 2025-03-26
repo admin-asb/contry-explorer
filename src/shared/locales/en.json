@@ -1,0 +1,19 @@
+{
+  "home": "Home",
+  "search_placeholder": "Search for a country...",
+  "filter_region": "Filter by region",
+  "sort_population": "Sort by population",
+  "borders": "Borders",
+  "population": "Population",
+  "million": "million",
+  "km": "km",
+  "capital": "Capital",
+  "area": "Area",
+  "languages": "Languages",
+  "asia": "Asia",
+  "europe": "Europe",
+  "africa": "Africa",
+  "americas": "North and South America",
+  "oceania": "Oceania",
+  "antarctica": "Antarctica"
+}
